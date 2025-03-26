@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form onsubmit="return validateLogin()">
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        function validateLogin() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            if (user === "admin" && pass === "1234") {
+                alert("Login Successful!");
+                return true;
+            } else {
+                alert("Invalid Credentials");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

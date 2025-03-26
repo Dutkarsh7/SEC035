@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        input, button { padding: 10px; margin: 5px; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; padding: 8px; margin: 5px; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+    <h1>Library Books & Movies</h1>
+    <input type="text" id="itemInput" placeholder="Enter Book or Movie Name">
+    <button onclick="addItem()">Add</button>
+
+    <ul id="itemList"></ul>
+
+    <script>
+        function addItem() {
+            let input = document.getElementById("itemInput").value;
+            if (input === "") return;
+
+            let li = document.createElement("li");
+            li.innerHTML = `${input} <button onclick="this.parentElement.remove()">Remove</button>`;
+            document.getElementById("itemList").appendChild(li);
+
+            document.getElementById("itemInput").value = ""; // Clear input field
+        }
+    </script>
+
+</body>
+</html>

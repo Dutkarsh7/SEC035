@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggle</title>
+</head>
+<body style="text-align: center;">
+    <h1>Click the bulb to turn it ON/OFF</h1>
+    <img id="bulb" src="https://www.w3schools.com/js/pic_bulboff.gif" onclick="toggleBulb()" width="150">
+    
+    <script>
+        function toggleBulb() {
+            let img = document.getElementById("bulb");
+            if (img.src.includes("pic_bulboff")) {
+                img.src = "https://www.w3schools.com/js/pic_bulbon.gif"; 
+            } else {
+                img.src = "https://www.w3schools.com/js/pic_bulboff.gif"; 
+            }
+        }
+    </script>
+</body>
+</html>
