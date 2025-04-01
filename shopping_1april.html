@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List For Shopping</title>
+    </head>
+    <body>
+        <h2>Shopping To-Do List</h2>
+            <input type="text" id="item" placeholder="Enter items">
+            <button onclick="addItem()">Add</button>
+            <ul id="list"></ul>
+
+    <script>
+        function addItem() {
+            let itemInput = document.getElementById("item");
+            let itemValue = itemInput.value.trim();
+            if (itemValue === "") return;
+            let list = document.getElementById("list");
+            let li = document.createElement("li");
+            li.textContent = itemValue;
+            
+            let button = document.createElement("button");
+            button.textContent = "#";
+            button.onclick = function() { list.removeChild(li); };
+            
+            li.appendChild(button);
+            list.appendChild(li);
+            itemInput.value = "";
+        }
+    </script>
+</body>
+</html>
